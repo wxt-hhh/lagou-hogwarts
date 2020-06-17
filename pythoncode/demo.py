@@ -21,8 +21,9 @@ def func3(name='tom'):
     '''
     返回默认值tom
     '''
-    return print(name)
+    return name
 
 
 print(func2())
 func3()
+print(func3())
