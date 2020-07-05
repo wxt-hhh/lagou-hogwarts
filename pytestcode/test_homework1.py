@@ -4,31 +4,22 @@ from pytestcode.base import get_yaml
 
 @pytest.mark.parametrize("data", get_yaml('cal.yml'))
 class TestCal:
-    def test_add(self, start_cal, data):
-        a = data['a']
-        b = data['b']
-        assert a + b == start_cal.add(a, b)
+    @pytest.mark.add
+    def test_add(self, data, start_cal):
+        assert data['add'] == start_cal.add(data['a'], data['b'])
 
     @pytest.mark.sub
-    def test_sub(self, start_cal, data):
-        a = data['a']
-        b = data['b']
-        assert a - b == start_cal.sub(a, b)
+    def test_sub(self, data, start_cal):
+        assert data['sub'] == start_cal.sub(data['a'], data['b'])
 
     @pytest.mark.mul
-    def test_mul(self, start_cal, data):
-        a = data['a']
-        b = data['b']
-        assert a * b == start_cal.mul(a, b)
+    def test_mul(self, data, start_cal):
+        assert data['mul'] == start_cal.mul(data['a'], data['b'])
 
     @pytest.mark.div
-    def test_div(self, start_cal, data):
-        a = data['a']
-        b = data['b']
-        # 尝试捕捉b是否为0，如果为0则抛出异常
-        try:
-            b == 0
-        except ZeroDivisionError as e:
-            print(e)
+    def test_div(self, data, start_cal):
+        # 判断b是否为0，如果为0打印异常
+        if data['b'] == 0:
+            print(ZeroDivisionError)
         else:
-            assert a / b == start_cal.div(a, b)
+            assert data['div'] == start_cal.div(data['a'], data['b'])

@@ -1,11 +1,23 @@
 # 0
 - a: 0
   b: 0
+  add: 0
+  sub: 0
+  mul: 0
+  div: 0
 
 # 负数
 - a: -1
   b: -2
+  add: -3
+  sub: 1
+  mul: 2
+  div: 0.5
 
 # 整数
 - a: 1
   b: 2
+  add: 3
+  sub: -1
+  mul: 2
+  div: 0.5
