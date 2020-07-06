@@ -2,7 +2,7 @@ import pytest
 from pytestcode.base import get_yaml
 
 
-@pytest.mark.parametrize("data", get_yaml('cal.yml'))
+@pytest.mark.parametrize("data", get_yaml('cal.yml'), ids=['零', '负数', '正数'])
 class TestCal:
     @pytest.mark.add
     def test_add(self, data, start_cal):
@@ -20,6 +20,6 @@ class TestCal:
     def test_div(self, data, start_cal):
         # 判断b是否为0，如果为0打印异常
         if data['b'] == 0:
-            print(ZeroDivisionError)
+            raise ZeroDivisionError
         else:
             assert data['div'] == start_cal.div(data['a'], data['b'])
