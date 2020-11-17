@@ -1,6 +1,6 @@
 from appium import webdriver
 
-
+# 启动设备
 def appiumStart(data):
     desired_caps = {}
     desired_caps['platformName'] = data['platformName']
