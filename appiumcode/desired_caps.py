@@ -1,15 +1,15 @@
 from appium import webdriver
 
 
-def appium():
+def appiumStart(data):
     desired_caps = {}
-    desired_caps['platformName'] = 'Android'
-    desired_caps['platformVersion'] = '10'
-    desired_caps['deviceName'] = '30a4c252'
-    desired_caps['appPackage'] = 'com.android.settings'
-    desired_caps['appActivity'] = 'com.android.settings.Settings'
-    driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_caps)
-    driver.quit()
+    desired_caps['platformName'] = data['platformName']
+    desired_caps['platformVersion'] = data['platformVersion']
+    desired_caps['deviceName'] = data['deviceName']
+    desired_caps['appPackage'] = data['appPackage']
+    desired_caps['appActivity'] = data['appActivity']
+    desired_caps['noReset'] = data['noReset']
+    driver = webdriver.Remote(data['host'], desired_caps)
+    driver.implicitly_wait(10)
 
-
-appium()
+# appiumStart()
