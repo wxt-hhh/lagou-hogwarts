@@ -1,7 +1,7 @@
 from typing import List
 import pytest
-from appiumcode.desired_caps import appiumStart
-from appiumcode.getYML import get_yaml
+from appiumcode.base.app import App
+from appiumcode.base.getYML import get_yaml
 
 # 自定义hook函数，pytest_collection_modifyitems，可以将收集上来的测试用例进行改写
 # 控制用例执行顺序，自动添加标签，解决测试用例编码问题
@@ -22,14 +22,3 @@ def pytest_collection_modifyitems(session: "Session", config: "Config", items: L
             item.add_marker(pytest.mark.add)
         elif 'div' in item.nodeid:
             item.add_marker(pytest.mark.div)
-
-
-@pytest.fixture(scope="class", autouse=True)
-def setup_class():
-    data = get_yaml('devices.yml')
-    appiumStart(data)
-
-
-@pytest.fixture(scope="class", autouse=True)
-def teardown_class():
-    print('----------')

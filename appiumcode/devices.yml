@@ -1,7 +1,0 @@
-platformName: Android
-platformVersion: 10
-deviceName: 192.168.1.116:5555
-noReset: True
-appPackage: com.tencent.wework
-appActivity: .launch.LaunchSplashActivity
-host: http://localhost:4723/wd/hub

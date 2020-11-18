@@ -7,6 +7,6 @@ def get_yaml(file):
         return files
 
 # print(get_yaml('testData.yml'))
-# # a = get_yaml('testData.yml')
-# # name = a['add']['name']
-# # print(name)
+# data = get_yaml('../datas/devices.yml')
+# for i in range(len(data)):
+#     print(data[i])
