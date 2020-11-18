@@ -7,7 +7,7 @@ def test_env(cmdoption):
     print(f'{cmdoption}')
 
 
-@pytest.mark.parametrize("data", get_yaml('cal.yml'), ids=['零', '负数', '正数'])
+@pytest.mark.parametrize("data", get_yaml('cal.yml'), ids=['零', '负数', '正数'], scope='function')
 class Test_Cal:
     @pytest.mark.run(order=4)
     @pytest.mark.dependency(depends=['mul'])

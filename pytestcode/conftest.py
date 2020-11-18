@@ -5,7 +5,7 @@ from pytestcode.base import get_yaml
 from pytestcode.calculator import Calculator
 
 
-@pytest.fixture(scope='class', autouse=True)
+@pytest.fixture(scope='module', autouse=True)
 def start_cal():
     print('开始计算')
     yield Calculator()
