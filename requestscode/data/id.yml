@@ -1,0 +1,7 @@
+-
+  corpid: wwd1768a9c641cee42
+  corpsecret: 6SDShRf0WdkxYr2jTTuo2XqZJk8YiddahbJSbouA2x8
+  host: https://qyapi.weixin.qq.com
+  url: /cgi-bin/gettoken
+  method: GET
+  query: ?corpid={}&corpsecret={}

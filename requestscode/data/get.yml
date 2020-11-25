@@ -1,0 +1,6 @@
+-
+  host: https://qyapi.weixin.qq.com
+  url: /cgi-bin/user/get
+  method: GET
+  query: ?access_token={}&userid={}
+  userid: ceshiren

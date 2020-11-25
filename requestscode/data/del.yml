@@ -1,0 +1,6 @@
+-
+  host: https://qyapi.weixin.qq.com
+  url: /cgi-bin/user/delete
+  method: GET
+  query: ?access_token={}
+  userid: ceshiren

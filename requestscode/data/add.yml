@@ -1,0 +1,9 @@
+-
+  host: https://qyapi.weixin.qq.com
+  url: /cgi-bin/user/create
+  method: POST
+  query: ?access_token={}
+  userid: ceshiren
+  name: ceshiren
+  mobile: 13800000001
+  department: [1]

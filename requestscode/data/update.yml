@@ -1,0 +1,7 @@
+-
+  host: https://qyapi.weixin.qq.com
+  url: /cgi-bin/user/update
+  method: POST
+  query: ?access_token={}
+  name: test
+  userid: ceshiren
