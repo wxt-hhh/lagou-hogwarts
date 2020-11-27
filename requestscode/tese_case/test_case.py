@@ -1,14 +1,17 @@
+import allure
 import requests
-from requestscode.getYaml import getYml
+from requestscode.base.getYaml import getYml
 import pytest
 
 
+@allure.feature('测试联系人增删改查')
 class TestWework:
     # 创建一个session对象
     session = requests.session()
 
-    @pytest.mark.parametrize('data', getYml('./data/id.yml'), ids=['获取access_token'])
-    def test_get_access_token(self, data):
+    # @pytest.mark.parametrize('data', getYml('../data/id.yml'), ids=['获取access_token'])
+    def test_get_access_token(self):
+        data = getYml('../data/id.yml')
         corpid = data['corpid']
         corpsecret = data['corpsecret']
         path = data['host'] + data['url'] + data['query'].format(f'{corpid}', f'{corpsecret}')
@@ -23,7 +26,8 @@ class TestWework:
         pytest.assume(r.json()['errcode'] == 0)
         pytest.assume(r.json()['errmsg'] == 'ok')
 
-    @pytest.mark.parametrize('data', getYml('./data/add.yml'), ids=['添加联系人'])
+    @allure.story('添加联系人')
+    @pytest.mark.parametrize('data', getYml('../data/add.yml'), ids=['添加联系人'])
     def test_add_contacts(self, data):
         new_data = {
             "userid": data["userid"],
@@ -42,7 +46,8 @@ class TestWework:
         pytest.assume(r.json()['errcode'] == 0)
         pytest.assume('created' in r.json()['errmsg'])
 
-    @pytest.mark.parametrize('data', getYml('./data/get.yml'), ids=['查询联系人'])
+    @allure.story('查询联系人')
+    @pytest.mark.parametrize('data', getYml('../data/get.yml'), ids=['查询联系人'])
     def test_get_contacts(self, data):
         path = data['host'] + data['url']
         r = self.session.request(method=data['method'], url=path)
@@ -54,7 +59,8 @@ class TestWework:
         pytest.assume(r.json()['errcode'] == 0)
         pytest.assume(r.json()['errmsg'] == 'ok')
 
-    @pytest.mark.parametrize('data', getYml('./data/update.yml'), ids=['修改联系人'])
+    @allure.story('修改联系人')
+    @pytest.mark.parametrize('data', getYml('../data/update.yml'), ids=['修改联系人'])
     def test_update_contacts(self, data):
         new_data = {
             "userid": data['userid'],
@@ -70,7 +76,8 @@ class TestWework:
         pytest.assume(r.json()['errcode'] == 0)
         pytest.assume(r.json()['errmsg'] == 'updated')
 
-    @pytest.mark.parametrize('data', getYml('./data/del.yml'), ids=['删除联系人'])
+    @allure.story('删除联系人')
+    @pytest.mark.parametrize('data', getYml('../data/del.yml'), ids=['删除联系人'])
     def test_del_contacts(self, data):
         path = data['host'] + data['url']
         r = self.session.request(method=data['method'], url=path)

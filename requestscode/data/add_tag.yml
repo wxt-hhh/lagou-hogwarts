@@ -1,0 +1,7 @@
+-
+  method: POST
+  #host: https://qyapi.weixin.qq.com
+  url:  https://qyapi.weixin.qq.com/cgi-bin/tag/create
+  json:
+    tagname: 宇宙无敌大魔王
+    tagid: 1

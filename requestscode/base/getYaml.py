@@ -7,4 +7,4 @@ def getYml(file):
     return newFile
 
 
-# print(getYml('./data/id.yml'))
+# print(getYml('../data/add_tag.yml'))

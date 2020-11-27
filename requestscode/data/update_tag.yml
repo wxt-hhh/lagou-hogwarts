@@ -1,0 +1,7 @@
+-
+  method: POST
+#  host: https://qyapi.weixin.qq.com
+  url:  https://qyapi.weixin.qq.com/cgi-bin/tag/update
+  json:
+    tagid: 1
+    tagname: 大魔王的标签

@@ -1,0 +1,6 @@
+-
+  method: GET
+  #host: https://qyapi.weixin.qq.com
+  url: https://qyapi.weixin.qq.com/cgi-bin/tag/delete
+  params:
+    tagid: 1
