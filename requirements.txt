@@ -26,7 +26,7 @@ pipx==0.15.6.0
 pluggy==0.13.1
 protobuf==3.13.0
 publicsuffix2==2.20191221
-py==1.9.0
+py==1.10.0
 pyasn1==0.4.8
 pycparser==2.20
 pyOpenSSL==19.1.0
